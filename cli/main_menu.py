@@ -12,4 +12,15 @@ def main_menu():
 
         choice = input("Enter choice: ").strip() 
 
-        
+
+        if choice == "1":
+            users_menu()
+        elif choice == "2":
+            projects_menu()
+        elif choice == "3":
+            tasks_menu()
+        elif choice == "0":
+            print("Goodbye 👋")
+            break
+        else:
+            print("Invalid choice, try again.")
