@@ -19,3 +19,7 @@ def projects_menu():
         elif choice == "2":
             for p in Project.get_all():
                 print(f"{p.id}. {p.name} (User ID: {p.user_id})")
+        elif choice == "3":
+            id = int(input("Enter project ID: "))
+            project = Project.find_by_id(id)
+            print(project.__dict__ if project else "❌ Project not found.")
