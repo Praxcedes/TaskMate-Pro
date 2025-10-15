@@ -29,3 +29,9 @@ class Task:
         CURSOR.execute("UPDATE tasks SET status='Completed' WHERE id=?", (self.id,))
         CONN.commit()
         self.status = "Completed"
+
+    def delete(self):
+        CURSOR.execute("DELETE FROM tasks WHERE id=?", (self.id,))
+        CONN.commit()
+
+    
