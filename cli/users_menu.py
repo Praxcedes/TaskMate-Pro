@@ -11,7 +11,6 @@ def users_menu():
 
         choice = input("Enter choice: ").strip()
 
-
         if choice == "1":
             name = input("Enter name: ")
             email = input("Enter email: ")
@@ -24,7 +23,6 @@ def users_menu():
             id = int(input("Enter user ID: "))
             user = User.find_by_id(id)
             print(user.__dict__ if user else "❌ User not found")
-        
         elif choice == "4":
             id = int(input("Enter user ID to delete: "))
             user = User.find_by_id(id)
@@ -37,5 +35,3 @@ def users_menu():
             break
         else:
             print("Invalid choice.")
-
-        
