@@ -24,3 +24,8 @@ class Task:
         CURSOR.execute("SELECT * FROM tasks WHERE id=?", (id,))
         row = CURSOR.fetchone()
         return cls(*row[1:], id=row[0]) if row else None
+    
+    def mark_complete(self):
+        CURSOR.execute("UPDATE tasks SET status='Completed' WHERE id=?", (self.id,))
+        CONN.commit()
+        self.status = "Completed"
