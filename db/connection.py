@@ -11,3 +11,12 @@ def initialize_db():
         email TEXT UNIQUE NOT NULL
     )
     """)
+    
+    CURSOR.execute("""
+    CREATE TABLE IF NOT EXISTS projects (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        user_id INTEGER,
+        FOREIGN KEY (user_id) REFERENCES users(id)
+    )
+    """)
