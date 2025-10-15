@@ -10,3 +10,10 @@ def projects_menu():
         print("0. Back")
 
         choice = input("Enter choice: ").strip()
+
+        if choice == "1":
+            name = input("Enter project name: ")
+            user_id = int(input("Enter user ID: "))
+            Project.create(name, user_id)
+            print("✅ Project created successfully!")
+            
