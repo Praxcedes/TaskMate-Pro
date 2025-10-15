@@ -29,3 +29,5 @@ def projects_menu():
             if project:
                 project.delete()
                 print("🗑️ Project deleted.")
+            else:
+                print("❌ Project not found.")
