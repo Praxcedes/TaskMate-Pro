@@ -9,4 +9,4 @@ def projects_menu():
         print("4. Delete Project")
         print("0. Back")
 
-        
+        choice = input("Enter choice: ").strip()
