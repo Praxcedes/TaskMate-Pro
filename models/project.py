@@ -5,3 +5,10 @@ class Project:
         self.id = id
         self.name = name
         self.user_id = user_id
+
+    @classmethod
+    def create(cls, name, user_id):
+        CURSOR.execute("INSERT INTO projects (name, user_id) VALUES (?, ?)", (name, user_id))
+        CONN.commit()
+        return cls(name, user_id, CURSOR.lastrowid)
+  
