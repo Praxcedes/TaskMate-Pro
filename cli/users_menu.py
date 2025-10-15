@@ -9,4 +9,4 @@ def users_menu():
         print("4. Delete User")
         print("0. Back")
 
-        
+        choice = input("Enter choice: ").strip()
