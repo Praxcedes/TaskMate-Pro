@@ -24,4 +24,6 @@ class Project:
         row = CURSOR.fetchone()
         return cls(*row[1:], id=row[0]) if row else None
     
-    
+    def delete(self):
+        CURSOR.execute("DELETE FROM projects WHERE id=?", (self.id,))
+        CONN.commit()
