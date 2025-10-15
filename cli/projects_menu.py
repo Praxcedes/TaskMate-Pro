@@ -15,22 +15,22 @@ def projects_menu():
             name = input("Enter project name: ")
             user_id = int(input("Enter user ID: "))
             Project.create(name, user_id)
-            print("✅ Project created successfully!")
+            print(" Project created successfully!")
         elif choice == "2":
             for p in Project.get_all():
                 print(f"{p.id}. {p.name} (User ID: {p.user_id})")
         elif choice == "3":
             id = int(input("Enter project ID: "))
             project = Project.find_by_id(id)
-            print(project.__dict__ if project else "❌ Project not found.")
+            print(project.__dict__ if project else " Project not found.")
         elif choice == "4":
             id = int(input("Enter project ID to delete: "))
             project = Project.find_by_id(id)
             if project:
                 project.delete()
-                print("🗑️ Project deleted.")
+                print(" Project deleted.")
             else:
-                print("❌ Project not found.")
+                print(" Project not found.")
         elif choice == "0":
             break
         else:
