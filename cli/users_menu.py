@@ -17,4 +17,7 @@ def users_menu():
             email = input("Enter email: ")
             User.create(name, email)
             print("✅ User created successfully!")
-            
+        elif choice == "2":
+            for user in User.get_all():
+                print(f"{user.id}. {user.name} ({user.email})")
+                
