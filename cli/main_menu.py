@@ -10,8 +10,7 @@ def main_menu():
         print("3. Manage Tasks")
         print("0. Exit")
 
-        choice = input("Enter choice: ").strip() 
-
+        choice = input("Enter choice: ").strip()
 
         if choice == "1":
             users_menu()
