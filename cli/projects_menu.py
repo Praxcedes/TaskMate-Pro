@@ -23,3 +23,9 @@ def projects_menu():
             id = int(input("Enter project ID: "))
             project = Project.find_by_id(id)
             print(project.__dict__ if project else "❌ Project not found.")
+        elif choice == "4":
+            id = int(input("Enter project ID to delete: "))
+            project = Project.find_by_id(id)
+            if project:
+                project.delete()
+                print("🗑️ Project deleted.")
