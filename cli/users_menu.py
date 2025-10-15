@@ -10,3 +10,11 @@ def users_menu():
         print("0. Back")
 
         choice = input("Enter choice: ").strip()
+
+
+        if choice == "1":
+            name = input("Enter name: ")
+            email = input("Enter email: ")
+            User.create(name, email)
+            print("✅ User created successfully!")
+            
