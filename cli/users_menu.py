@@ -25,5 +25,17 @@ def users_menu():
             user = User.find_by_id(id)
             print(user.__dict__ if user else "❌ User not found")
         
+elif choice == "4":
+            id = int(input("Enter user ID to delete: "))
+            user = User.find_by_id(id)
+            if user:
+                user.delete()
+                print("🗑️ User deleted.")
+            else:
+                print("❌ User not found.")
+        elif choice == "0":
+            break
+        else:
+            print("Invalid choice.")
 
         
