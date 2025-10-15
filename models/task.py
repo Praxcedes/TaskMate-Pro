@@ -12,3 +12,11 @@ class Task:
         CURSOR.execute("INSERT INTO tasks (title, project_id) VALUES (?, ?)", (title, project_id))
         CONN.commit()
         return cls(title, project_id, id=CURSOR.lastrowid)
+    
+    @classmethod
+    def get_all(cls):
+        CURSOR.execute("SELECT * FROM tasks")
+        rows = CURSOR.fetchall()
+        return [cls(*row[1:], id=row[0]) for row in rows]
+    
+    
