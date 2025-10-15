@@ -33,4 +33,15 @@ def tasks_menu():
                 print("✅ Task marked complete!")
             else:
                 print("❌ Task not found.")
-    
+    elif choice == "5":
+            id = int(input("Enter task ID to delete: "))
+            t = Task.find_by_id(id)
+            if t:
+                t.delete()
+                print("🗑️ Task deleted.")
+            else:
+                print("❌ Task not found.")
+    elif choice == "0":
+       break
+         else:
+            print("Invalid choice.")
