@@ -16,30 +16,30 @@ def tasks_menu():
             title = input("Enter task title: ")
             project_id = int(input("Enter project ID: "))
             Task.create(title, project_id)
-            print("✅ Task created!")
+            print("Task created!")
         elif choice == "2":
             for t in Task.get_all():
                 print(f"{t.id}. {t.title} - {t.status} (Project ID: {t.project_id})")
         elif choice == "3":
             id = int(input("Enter task ID: "))
             t = Task.find_by_id(id)
-            print(t.__dict__ if t else "❌ Task not found.")
+            print(t.__dict__ if t else " Task not found.")
         elif choice == "4":
             id = int(input("Enter task ID to mark complete: "))
             t = Task.find_by_id(id)
             if t:
                 t.mark_complete()
-                print("✅ Task marked complete!")
+                print("Task marked complete!")
             else:
-                print("❌ Task not found.")
+                print(" Task not found.")
         elif choice == "5":
             id = int(input("Enter task ID to delete: "))
             t = Task.find_by_id(id)
             if t:
                 t.delete()
-                print("🗑️ Task deleted.")
+                print(" Task deleted.")
             else:
-                print("❌ Task not found.")
+                print(" Task not found.")
         elif choice == "0":
             break
         else:
