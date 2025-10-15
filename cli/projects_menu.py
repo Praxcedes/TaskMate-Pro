@@ -31,3 +31,7 @@ def projects_menu():
                 print("🗑️ Project deleted.")
             else:
                 print("❌ Project not found.")
+        elif choice == "0":
+            break
+        else:
+            print("Invalid choice.")
