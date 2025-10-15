@@ -19,4 +19,8 @@ class Task:
         rows = CURSOR.fetchall()
         return [cls(*row[1:], id=row[0]) for row in rows]
     
-    
+    @classmethod
+    def find_by_id(cls, id):
+        CURSOR.execute("SELECT * FROM tasks WHERE id=?", (id,))
+        row = CURSOR.fetchone()
+        return cls(*row[1:], id=row[0]) if row else None
