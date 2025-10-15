@@ -25,3 +25,12 @@ def tasks_menu():
             id = int(input("Enter task ID: "))
             t = Task.find_by_id(id)
             print(t.__dict__ if t else "❌ Task not found.")
+    elif choice == "4":
+            id = int(input("Enter task ID to mark complete: "))
+            t = Task.find_by_id(id)
+            if t:
+                t.mark_complete()
+                print("✅ Task marked complete!")
+            else:
+                print("❌ Task not found.")
+                
