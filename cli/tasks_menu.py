@@ -10,4 +10,5 @@ def tasks_menu():
         print("5. Delete Task")
         print("0. Back")
 
-        
+        choice = input("Enter choice: ").strip()
+    
