@@ -20,4 +20,10 @@ def users_menu():
         elif choice == "2":
             for user in User.get_all():
                 print(f"{user.id}. {user.name} ({user.email})")
-                
+        elif choice == "3":
+            id = int(input("Enter user ID: "))
+            user = User.find_by_id(id)
+            print(user.__dict__ if user else "❌ User not found")
+        
+
+        
