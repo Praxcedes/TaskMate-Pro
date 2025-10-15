@@ -16,4 +16,6 @@ def projects_menu():
             user_id = int(input("Enter user ID: "))
             Project.create(name, user_id)
             print("✅ Project created successfully!")
-            
+        elif choice == "2":
+            for p in Project.get_all():
+                print(f"{p.id}. {p.name} (User ID: {p.user_id})")
