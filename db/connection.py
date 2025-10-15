@@ -20,3 +20,13 @@ def initialize_db():
         FOREIGN KEY (user_id) REFERENCES users(id)
     )
     """)
+
+CURSOR.execute("""
+    CREATE TABLE IF NOT EXISTS tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        status TEXT DEFAULT 'Pending',
+        project_id INTEGER,
+        FOREIGN KEY (project_id) REFERENCES projects(id)
+    )
+    """)
