@@ -11,4 +11,10 @@ def tasks_menu():
         print("0. Back")
 
         choice = input("Enter choice: ").strip()
-    
+
+    if choice == "1":
+            title = input("Enter task title: ")
+            project_id = int(input("Enter project ID: "))
+            Task.create(title, project_id)
+            print("✅ Task created!")
+            
