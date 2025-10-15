@@ -12,3 +12,8 @@ class Project:
         CONN.commit()
         return cls(name, user_id, CURSOR.lastrowid)
   
+    @classmethod
+    def get_all(cls):
+        CURSOR.execute("SELECT * FROM projects")
+        rows = CURSOR.fetchall()
+        return [cls(*row[1:], id=row[0]) for row in rows]
