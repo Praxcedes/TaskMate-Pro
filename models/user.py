@@ -24,3 +24,6 @@ class User:
         row = CURSOR.fetchone()
         return cls(*row[1:], id=row[0]) if row else None
 
+def delete(self):
+        CURSOR.execute("DELETE FROM users WHERE id=?", (self.id,))
+        CONN.commit()
