@@ -30,3 +30,4 @@ CURSOR.execute("""
         FOREIGN KEY (project_id) REFERENCES projects(id)
     )
     """)
+CONN.commit()
