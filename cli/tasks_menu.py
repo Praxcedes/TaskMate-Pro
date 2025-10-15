@@ -17,4 +17,11 @@ def tasks_menu():
             project_id = int(input("Enter project ID: "))
             Task.create(title, project_id)
             print("✅ Task created!")
-            
+
+    elif choice == "2":
+            for t in Task.get_all():
+                print(f"{t.id}. {t.title} - {t.status} (Project ID: {t.project_id})")
+    elif choice == "3":
+            id = int(input("Enter task ID: "))
+            t = Task.find_by_id(id)
+            print(t.__dict__ if t else "❌ Task not found.")
