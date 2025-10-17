@@ -15,22 +15,22 @@ def users_menu():
             name = input("Enter name: ")
             email = input("Enter email: ")
             User.create(name, email)
-            print("✅ User created successfully!")
+            print("User created successfully!")
         elif choice == "2":
             for user in User.get_all():
                 print(f"{user.id}. {user.name} ({user.email})")
         elif choice == "3":
             id = int(input("Enter user ID: "))
             user = User.find_by_id(id)
-            print(user.__dict__ if user else "❌ User not found")
+            print(user.__dict__ if user else " User not found")
         elif choice == "4":
             id = int(input("Enter user ID to delete: "))
             user = User.find_by_id(id)
             if user:
                 user.delete()
-                print("🗑️ User deleted.")
+                print(" User deleted.")
             else:
-                print("❌ User not found.")
+                print(" User not found.")
         elif choice == "0":
             break
         else:
