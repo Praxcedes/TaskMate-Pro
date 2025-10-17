@@ -19,7 +19,7 @@ def main_menu():
         elif choice == "3":
             tasks_menu()
         elif choice == "0":
-            print("Goodbye 👋")
+            print("See you! BYE")
             break
         else:
             print("Invalid choice, try again.")
